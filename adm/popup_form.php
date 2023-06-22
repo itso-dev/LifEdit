@@ -33,6 +33,9 @@ if ($type == 'modify') {
 
     $file1 = '/data/popup/' . $row[6]; // pc
     $file2 = '/data/popup/' . $row[8]; // mobile
+    $pc_file = $row[6];
+    $mo_file = $row[8];
+
 
     $start_date = $row[2];
     $end_date = $row[3];
@@ -49,29 +52,31 @@ if ($type == 'modify') {
 <div class="page-header">
     <h4 class="page-title">팝업 설정</h4>
     <form name="popup_form" id="popup_form" method="post" enctype="multipart/form-data"
-        action="./ajax/popup_setting.php">
+          action="./ajax/popup_setting.php">
         <input type="hidden" name="id" value="<?= $id ?>" />
         <input type="hidden" name="type" value="<?= $type ?>" />
+        <input type="hidden" name="pc_file" value="<?= $pc_file ?>" />
+        <input type="hidden" name="mo_file" value="<?= $mo_file ?>" />
         <div>
             <div class="input-wrap">
                 <p class="label-name">시작일시*</p>
                 <input type="text" name="start_date" id="start_date" class="form-control" value="<?= $start_date ?>"
-                    placeholder="ex) 2021-01-01 00:00:00" required>
+                       placeholder="ex) 2021-01-01 00:00:00" required>
                 <label>
                     <input type="checkbox" name="today_chk"
-                        onclick="if (this.checked == true) this.form.start_date.value=this.form.today_chk.value; else this.form.start_date.value = this.form.start_date.defaultValue;"
-                        value="<?= $today ?> 00:00:00">
+                           onclick="if (this.checked == true) this.form.start_date.value=this.form.today_chk.value; else this.form.start_date.value = this.form.start_date.defaultValue;"
+                           value="<?= $today ?> 00:00:00">
                     시작일시를 오늘로
                 </label>
             </div>
             <div class="input-wrap">
                 <p class="label-name">종료일시*</p>
                 <input type="text" name="end_date" id="end_date" class="form-control" value="<?= $end_date ?>"
-                    placeholder="ex) 2021-01-01 23:59:59" required>
+                       placeholder="ex) 2021-01-01 23:59:59" required>
                 <label>
                     <input type="checkbox" name="seven_chk"
-                        onclick="if (this.checked == true) this.form.end_date.value=this.form.seven_chk.value; else this.form.end_date.value = this.form.end_date.defaultValue;"
-                        value="<?= $seven_day ?> 23:59:59">
+                           onclick="if (this.checked == true) this.form.end_date.value=this.form.seven_chk.value; else this.form.end_date.value = this.form.end_date.defaultValue;"
+                           value="<?= $seven_day ?> 23:59:59">
                     종료일시를 오늘로
                 </label>
             </div>
