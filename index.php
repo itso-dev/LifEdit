@@ -44,6 +44,11 @@ $db_conn->prepare($view_sql)->execute(
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- recapture -->
+<script src='https://www.google.com/recaptcha/api.js?render=6LcLwBwnAAAAANtwRmDwYZOnnULJtKw5VvmjMC85'></script>
+
 
 
 <!-- layer popup -->
@@ -203,173 +208,6 @@ while ($popup = $popup_stt->fetch()) {
 </script>
 
 
-<div class="content page1" id="menu1">
-    <img class="logo" src="img/page1-top-logo.png">
-    <img class="tit" src="img/page1-tit.png">
-    <img class="bottom" src="img/page1-bottom.png">
-    <img class="left" src="img/page1-logo.png">
-    <img class="right" src="img/page1-right.png">
-</div>
-<div class="content page1-1"">
-<img class=" bg" src="img/veg-bg.png">
-    <img class="tit" src="img/page1-1-tit.png">
-    <div class="content-wrap">
-        <img class="content-tit" src="img/page1-1-tit1.png">
-        <div class="kit-wrap">
-            <img class="" src="img/kit01.png">
-            <img class="" src="img/kit02.png">
-            <img class="" src="img/kit03.png">
-            <img class="" src="img/kit04.png">
-            <img class="" src="img/kit05.png">
-            <img class="" src="img/kit06.png">
-            <img class="" src="img/kit07.png">
-            <img class="" src="img/kit08.png">
-        </div>
-    </div>
-    <div class="content-wrap">
-        <img class="content-tit" src="img/page1-1-tit2.png">
-    </div>
-    <div class="banchan-slide-wrap">
-        <div class="banchan-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/banchan1.png"></div>
-                <div class="swiper-slide"><img src="img/banchan2.png"></div>
-                <div class="swiper-slide"><img src="img/banchan3.png"></div>
-                <div class="swiper-slide"><img src="img/banchan4.png"></div>
-                <div class="swiper-slide"><img src="img/banchan5.png"></div>
-                <div class="swiper-slide"><img src="img/banchan6.png"></div>
-                <div class="swiper-slide"><img src="img/banchan7.png"></div>
-                <div class="swiper-slide"><img src="img/banchan9.png"></div>
-                <div class="swiper-slide"><img src="img/banchan10.png"></div>
-                <div class="swiper-slide"><img src="img/banchan11.png"></div>
-            </div>
-        </div>
-    </div>
-
-    <img class="sub-tit" src="img/page1-1-sub-tit.png">
-
-    <div class="content-wrap">
-        <img class="content-tit" src="img/page1-1-tit3.png">
-        <div class="cafe-wrap">
-            <img class="" src="img/page1-1-cafe1.png">
-            <img class="" src="img/page1-1-cafe2.png">
-            <img class="" src="img/page1-1-cafe3.png">
-            <img class="" src="img/page1-1-cafe4.png">
-        </div>
-    </div>
-    <img class="bottom" src="img/page1-1-bottom-tit.png">
-</div>
-<div class="content page2" id="menu2">
-    <div class="receipt-slide-wrap">
-        <div class="receipt-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/phone-01.png"></div>
-                <div class="swiper-slide"><img src="img/phone-02.png"></div>
-                <div class="swiper-slide"><img src="img/phone-03.png"></div>
-                <div class="swiper-slide"><img src="img/phone-04.png"></div>
-                <div class="swiper-slide"><img src="img/phone-05.png"></div>
-                <div class="swiper-slide"><img src="img/phone-06.png"></div>
-            </div>
-        </div>
-    </div>
-    <img class="tit" src="img/page2-tit.png">
-    <div class="flex-container">
-        <div class="flex-wrap">
-            <img src="img/page2-img1.png">
-            <img src="img/page2-img2.png">
-        </div>
-        <div class="flex-wrap">
-            <img src="img/page2-img3.png">
-            <img src="img/page2-img4.png">
-        </div>
-    </div>
-    <img class="mt-icon" src="img/page2-mt.png">
-</div>
-<div class="content page3">
-    <img class="tit" src="img/page3-tit.png">
-    <img class="chart" src="img/page3-chart.png">
-    <div class="flex-wrap">
-        <img class="" src="img/page3-img1.png">
-        <img class="" src="img/page3-img2.png">
-        <img class="" src="img/page3-img3.png">
-    </div>
-    <div class="video-container">
-        <div class="video-wrap">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jIb_Lz8K6gU"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </div>
-    </div>
-    <img class="cb-icon" src="img/page3-cb.png">
-</div>
-<div class="content page4">
-    <img class="tit" src="img/page4-tit.png">
-    <div class="menu-slide-wrap">
-        <div class="menu-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/menu1.png"></div>
-                <div class="swiper-slide"><img src="img/menu2.png"></div>
-                <div class="swiper-slide"><img src="img/menu3.png"></div>
-                <div class="swiper-slide"><img src="img/menu4.png"></div>
-            </div>
-        </div>
-    </div>
-    <img class="sub-tit" src="img/page4-tit2.png">
-    <div class="review-slide-wrap">
-        <div class="review-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/recipt0.png"></div>
-                <div class="swiper-slide"><img src="img/recipt1.png"></div>
-                <div class="swiper-slide"><img src="img/recipt2.png"></div>
-                <div class="swiper-slide"><img src="img/recipt3.png"></div>
-                <div class="swiper-slide"><img src="img/recipt4.png"></div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-wrap">
-        <img src="img/page4-naver1.png">
-        <img src="img/page4-naver2.png">
-    </div>
-</div>
-<div class="content page5" id="menu3">
-    <img class="tit" src="img/page5-tit.png">
-
-    <div class="img-wrap">
-        <img class="p5-img" src="img/page5-img1.png">
-        <img class="p5-img" src="img/page5-img2.png">
-        <img class="p5-img" src="img/page5-img3.png">
-    </div>
-    <img class="bottom" src="img/page5-img4.png">
-</div>
-<div class="content page6">
-    <div class="flex-wrap">
-        <img src="img/page6-map1.png">
-        <img src="img/page6-map2.png">
-        <img src="img/page6-map3.png">
-        <img src="img/page6-map4.png">
-        <img src="img/page6-map5.png">
-    </div>
-    <img class="tit" src="img/page6-tit.png">
-    <img class="pic" src="img/page6-pic.png" />
-</div>
-<div class="content page7" id="menu4">
-    <img class="tit" src="img/page7-tit.png" />
-    <img class="content-img" src="img/page7-img1.png" />
-    <img class="content-img" src="img/page7-img2.png" />
-    <img class="content-img" src="img/page7-img3.png" />
-    <img class="content-img" src="img/page7-img4.png" />
-    <img class="content-img" src="img/page7-img5.png" />
-</div>
-<div class="content page8">
-    <img class="tit" src="img/page8-tit.png" />
-    <img class="table" src="img/page8-table.png" />
-    <img class="chart" src="img/page8-chart.png" />
-</div>
-<div class="content page9">
-    <img class="tit" src="img/page9-img.png" />
-</div>
-
 <form name="contact_form" id="contact_form" method="post" action="contact_write.php" onsubmit="return FormSubmit();">
     <input type="hidden" name="writer_ip" value="<?= get_client_ip() ?>" />
     <input type="hidden" name="action" value="go">
@@ -435,8 +273,7 @@ while ($popup = $popup_stt->fetch()) {
                     개인 정보 취급 방침에 동의
                 </label>
             </div>
-            <input type="submit" value="창업 문의하기" onclick="sendTo();" />
-            <!--            <div class="g-recaptcha" style="margin-top: 10px" data-sitekey="6LcsckgfAAAAANUAAKdtrsI1S-AaLZbhoPJLN41k"></div>-->
+            <input class="submit-btn" type="submit" value="창업 문의하기" class="g-recaptcha" data-sitekey="6LeIUPcmAAAAAKknvdvB6rUxzAeGwrQrm3tGMnrV" data-callback='frmSubmit' data-action='submit'  />
         </div>
     </div>
 </form>
@@ -470,49 +307,22 @@ while ($popup = $popup_stt->fetch()) {
     </div>
 </div>
 
-<div class="modal-container">
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" width="100%" height="315"
-                            src="https://www.youtube.com/embed/XcYxluLQwxE" title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal-container">
-    <div class="modal fade" id="agreeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">이용약관</h5>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        [주식회사 팔공티] 이하 회사의 개인정보 수 및 활용에 관한 내용<br>
-                        개인정보 수집 및 이용 개인정보 수집주체 : 주식회사 팔공티<br>
-                        개인정보 수집항목 : 이름, 연락처, 창업희망지역, 문의사항, IP 등 개인을 식별할 수 있는 기타 정보 포함<br>
-                        개인정보 수집 및 이용목적 : 마케팅<br>
-                        개인정보 보유 및 이용기간 : 수집일로부터 3년 (고객 동의 철회 시 지체없이 파기)
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
 <script type="text/javascript">
 
+    AOS.init();
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LcLwBwnAAAAANtwRmDwYZOnnULJtKw5VvmjMC85', {action: 'submit'}).then(function(token) {
+            document.getElementById('g-recaptcha').value = token;
+        });
+    });
+
+    window.onpageshow = function(event) {
+        if (event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+            // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+            location.href = "/";
+        }
+    }
 
 
     $(document).ready(function () {
@@ -532,13 +342,6 @@ while ($popup = $popup_stt->fetch()) {
                 $floating.fadeIn('600');
 
         });
-
-        // popup //
-        var noticeCookie = getCookie("name");  // 쿠키 가져오기
-        if (noticeCookie == "value") {
-            // 팝업창 띄우기
-
-        }
 
 
     });
@@ -567,138 +370,7 @@ while ($popup = $popup_stt->fetch()) {
             }
         });
 
-        var receiptSlide = new Swiper(".receipt-container", {
-            slidesPerView: 3,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 2.8,
-                    spaceBetween: 10
-                },
-                768: {
-                    slidesPerView: 3.8,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 5.8,
-                    spaceBetween: 20
-                },
-            }
-        });
-
-        var menuSlide = new Swiper(".menu-container", {
-            slidesPerView: 3,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1.7,
-                    spaceBetween: 10
-                },
-                768: {
-                    slidesPerView: 2.7,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 3.7,
-                    spaceBetween: 20
-                },
-            }
-        });
-        var reviewSlide = new Swiper(".review-container", {
-            slidesPerView: 3,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 2.7,
-                    spaceBetween: 10
-                },
-                768: {
-                    slidesPerView: 4.7,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 5.7,
-                    spaceBetween: 20
-                },
-            }
-        });
-
-
     });
-
-
-    //리캡쳐
-    // function FormSubmit() {
-    //     if (grecaptcha.getResponse() == "") {
-    //         alert("로봇이 아닙니다를 체크해주세요.");
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    // }
-
-
-    //popup
-    function setCookie(name, value, expiredays) {
-        var today = new Date();
-        today.setDate(today.getDate() + expiredays);
-        document.cookie = name + '=' + escape(value) + '; expires=' + today.toGMTString();
-    }
-
-    function getCookie(name) {
-        var cookie = document.cookie;
-        if (document.cookie != "") {
-            var cookie_array = cookie.split("; ");
-            for (var index in cookie_array) {
-                var cookie_name = cookie_array[index].split("=");
-                if (cookie_name[0] == "mycookie") {
-                    return cookie_name[1];
-                }
-            }
-        }
-        return;
-    }
-    $(".modal-today-close").click(function () {
-        var popupId = $(this).siblings('.pid').val();
-        $(".popup" + popupId).modal("hide");
-        setCookie("mycookie", 'popupEnd', 1);
-    });
-
-    var checkCookie = getCookie("mycookie");
-
-
-
-    // close layer popup
-    function hidePopup(popupType) {
-        var showChk = $('#show-chk-' + popupType).is(':checked');
-        if (showChk) {
-            setCookie('popup' + popupType, 'Y', 1);
-        }
-        $('.popup' + popupType).fadeOut();
-    }
-
-    //유튜브 팝업
-    $('.video').click(function () {
-        $('#videoModal').modal('show');
-    });
-
-    //상담 내역 팝업
-    $('.open-agree').click(function () {
-        $('#agreeModal').modal('show');
-    });
-
 </script>
 
 <!--문자 알림-->
@@ -758,17 +430,6 @@ while ($popup = $popup_stt->fetch()) {
     }
 
 </script>
-
-<!-- 쳇봇 -->
-<!-- CLOUDTURING -->
-<script>
-    window.dyc = {
-        chatbotUid: "8a010adf4847bdbc"
-    };
-</script>
-<script async src="https://cloudturing.chat/v1.0/chat.js"></script>
-<!-- End CLOUDTURING -->
-
 <?php
 include_once('tale.php');
 ?>
