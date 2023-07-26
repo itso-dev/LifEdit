@@ -3,6 +3,40 @@
 
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
+    date_default_timezone_set('Asia/Seoul');
+
+    session_start();
+    $captcha = $_POST['g-recaptcha'];
+    $secretKey = '6LeIUPcmAAAAAOmmC7uHCV0ehulrrbqDHKztxIUk';
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    $data = array(
+        'secret' => $secretKey,
+        'response' => $captcha,
+        'remoteip' => $ip
+    );
+
+    $url = "https://www.google.com/recaptcha/api/siteverify";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    $responseKeys = json_decode($response, true);
+
+    if ($responseKeys["success"]) {
+    } else {
+        echo "<script type='text/javascript'>";
+        echo "alert('비정상적인 접근입니다.');";
+        echo "location.href = '/index.php';";
+        echo "</script>";
+        exit;
+    }
+
+
 
     $posted = date("Y-m-d H:i:s");
     $name = $_POST["name"];
