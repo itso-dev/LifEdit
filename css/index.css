@@ -5,7 +5,9 @@
 .mobile {
   display: none !important;
 }
-
+.grecaptcha-badge{
+  visibility: hidden;
+}
 .layer-popup {
   position: absolute;
   z-index: 9999;

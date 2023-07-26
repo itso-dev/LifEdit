@@ -273,6 +273,7 @@ while ($popup = $popup_stt->fetch()) {
                     개인 정보 취급 방침에 동의
                 </label>
             </div>
+            <input type="hidden" id="g-recaptcha" name="g-recaptcha">
             <input class="submit-btn" type="submit" value="창업 문의하기" class="g-recaptcha" data-sitekey="6LeIUPcmAAAAAKknvdvB6rUxzAeGwrQrm3tGMnrV" data-callback='frmSubmit' data-action='submit'  />
         </div>
     </div>
@@ -306,7 +307,7 @@ while ($popup = $popup_stt->fetch()) {
         </div>
     </div>
 </div>
-
+<script src='https://www.google.com/recaptcha/api.js?render=6LeIUPcmAAAAAKknvdvB6rUxzAeGwrQrm3tGMnrV'></script>
 <script type="text/javascript">
 
     AOS.init();
