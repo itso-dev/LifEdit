@@ -180,8 +180,12 @@
                     <div class="row mx-0 mb-2">
                         <div class="col-6 col-md-2 my-1 my-md-0 px-1">
                             <select class="custom-select custom-select-sm rounded-0" name="sch_manager">
-                                <option value="">전체</option>
-                                <option value="admin">관리자(admin)</option>
+                                <option value="0">없음</option>
+                                <?php
+                                while($admin_row1=$admin_stt->fetch()){
+                                    ?>
+                                    <option value="<?= $admin_row1['id'] ?>"><?= $admin_row1['login_name'] ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="col-6 col-md-2 my-1 my-md-0 px-1">

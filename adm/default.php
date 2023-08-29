@@ -37,7 +37,7 @@ if ( !$adm_login ) {
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li <?php if($menu == 0  || $menu == "") echo "class='active'" ?> >
-                    <a href="home.php?menu=0">
+                    <a href="index.php?menu=0">
                         <i class="fas fa-chart-bar"></i>
                         <p>로그관리</p>
                     </a>

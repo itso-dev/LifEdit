@@ -162,7 +162,7 @@
             </div>
             <div class="content-wrap">
                 <p class="tit">선택 조회</p>
-                <form name="search_form" id="search_form" method="post" action="home.php?menu=0">
+                <form name="search_form" id="search_form" method="post" action="index.php?menu=0">
                     <div class="choice-wrap">
                         <div class="item">
                             <p>시작 날짜</p>
