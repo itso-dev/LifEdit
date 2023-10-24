@@ -1,0 +1,348 @@
+
+/* **************************************** *
+ * jon01 시작
+ * **************************************** */
+ #container{
+    margin-top: 150px;
+}
+
+#container #contact_article{
+    max-width:1420px;
+    width: 90%;
+    margin: 0 auto
+}
+
+#container #contact_article #contact{
+    margin-top: 120px;
+    display: flex;
+}
+
+#container #contact_article #contact .left{
+    width: 40%;
+}
+
+#container #contact_article #contact .left img{
+    width: 530px;
+    height: 400px;
+}
+
+#container #contact_article #contact .left .info{
+    margin-top: 30px;
+    position: relative;
+}
+#container #contact_article #contact .left .info:after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 82%;
+    left: 16%;
+    background: #B8BBC3;
+    top: 15px;
+}
+#container #contact_article #contact .left .map{
+    max-width: 530px;
+}
+#container #contact_article #contact .left .map iframe{
+    width: 100%;
+    max-height: 400px;
+    border-radius: 15px;
+}
+#container #contact_article #contact .left .info strong{
+    margin-right: 15%;
+}
+
+#container #contact_article #contact .left .info p{
+    color: #5D5E67;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: -0.54px;
+    text-align: left;
+}
+
+#container #contact_article #contact .right{
+    width: 55%;
+    margin-left: 50px;
+}
+#container #contact_article #contact .right .tab-wrap{
+}
+#container #contact_article #contact .right .tab{
+    padding: 8px 30px;
+    box-sizing: border-box;
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.48px;
+    margin-right: 8px;
+    border-radius: 10px;
+    border: 1px solid #3EB86F;
+    background: #FFF;
+    cursor: pointer;
+}
+#container #contact_article #contact .right .tab.active{
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    background: #3EB86F;
+}
+#container #contact_article #contact .right  .input-line{
+    width: 100%;
+    margin-top: 35px;
+}
+#container #contact_article #contact .right  .input-line:nth-child(3),
+#container #contact_article #contact .right  .input-line:nth-child(4){
+    display: flex;
+    gap: 40px;
+}
+#container #contact_article #contact .right  .input-line:nth-child(3) .con-input,
+#container #contact_article #contact .right  .input-line:nth-child(4) .con-input{
+    width: 50%;
+}
+#container #contact_article #contact .right  .input-line input{
+    width: 100%;
+}
+#container #contact_article #contact .right  .input-line textarea{
+    height: 200px;
+    resize: none;
+    width: 100%;
+}
+#container #contact_article #contact .right  .input-line .label{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.54px;
+    margin-bottom: 7px;
+}
+#container #contact_article #contact .right  .input-line .label strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.54px;
+    position: relative;
+    bottom: 3px;
+}
+#container #contact_article #contact .right .agreement-wrap{
+    margin: 15px 0 50px;
+    width: 100%;
+}
+#container #contact_article #contact .right .agreement-wrap label{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.54px
+}
+#container #contact_article #contact .right .agreement-wrap label span{
+    color: #FF4337;
+}
+#container #contact_article #contact .right .agreement-wrap label input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 2px;
+    margin-right: 5px;
+}
+#container #contact_article #contact .right .agreement-wrap .more-open{
+    color: #999;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.42px;
+    float: right;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+#container #contact_article #contact .right .agreement-wrap .more-open.open img{
+    transform: rotate(180deg);
+}
+#container #contact_article #contact .right .agreement-wrap .more-open img{
+    width: 10px;
+    position: relative;
+    bottom: 2px;
+    margin-left: 2px;
+}
+#container #contact_article #contact .right .agreement-wrap .box{
+    color: #5D5E67;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.48px;
+    padding: 30px;
+    height: 110px;
+    overflow-y: scroll;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: #F8F8FA;
+    display: none;
+}
+#container #contact_article #contact .right .submit{
+    border-radius: 10px;
+    background: #3EB86F;
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.66px;
+    display: inline-block;
+    width: 100%;
+    padding: 13px;
+    outline: none;
+    border: none;
+}
+
+@media (max-width: 1470px) {
+    #container #contact_article #contact .left .info strong {
+        margin-right: 8%;
+    }
+    #container #contact_article #contact .left .info:after{
+        left:14%
+    }
+}
+@media (max-width: 1350px) {
+    #container #contact_article #contact .left{
+        width: 50%;
+    }
+    #container #contact_article #contact .right{
+        width: 50%;
+    }
+}
+@media (max-width: 1200px) {
+    #container #contact_article #contact .right{
+        margin-left: 20px;
+    }
+    #container #contact_article #contact .left .info p{
+        font-size: 15px;
+        line-height: 40px;
+    }
+}
+@media (max-width: 1024px) {
+    #container {
+        margin-top: 100px;
+    }
+    #container #contact_article #contact{
+        flex-wrap: wrap;
+        margin-top: 90px;
+    }
+    #container #contact_article #contact .left{
+        width: 100%;
+        margin-bottom: 130px;
+    }
+    #container #contact_article #contact .right{
+        width: 100%;
+        margin-left: 0px;
+    }
+    #container #contact_article #contact .left .map {
+        max-width: unset;
+        width: 100%;
+    }
+    #container #contact_article #contact .left .info {
+        padding-left: 10%;
+    }
+    #container #contact_article #contact .left .info p {
+        font-size: 17px;
+        line-height: 43px;
+    }
+    #container #contact_article #contact .left .info:after {
+        left: 21%;
+    }
+    #container #contact_article #contact .right .tab-wrap {
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    #container #contact_article #contact .left .info {
+        padding-left: 5%;
+    }
+    #container #contact_article #contact .left .info p {
+        font-size: 15px;
+        line-height: 42px;
+    }
+    #container #contact_article #contact .left .info:after {
+        left: 18%;
+        height: 79%;
+    }
+    #container #contact_article #contact .right .input-line:nth-child(3), #container #contact_article #contact .right .input-line:nth-child(4){
+        display: block;
+    }
+    #container #contact_article #contact .right .input-line:nth-child(3) .con-input, #container #contact_article #contact .right .input-line:nth-child(4) .con-input{
+        width: 100%;
+    }
+    #container #contact_article #contact .right .input-line:nth-child(3), #container #contact_article #contact .right .input-line:nth-child(3) .con-input:nth-child(1){
+        margin-bottom: 35px;
+    }
+    #container #contact_article #contact .right .agreement-wrap label{
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    #container {
+        margin-top: 80px;
+    }
+    #container #contact_article #contact {
+        margin-top: 70px;
+    }
+    #container #contact_article #contact .left{
+        margin-bottom: 100px;
+    }
+    #container #contact_article #contact .left .info p {
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 15px;
+        display: flex;
+        word-break: keep-all;
+    }
+    #container #contact_article #contact .left .info strong {
+        margin-right: 15%;
+    }
+    #container #contact_article #contact .left .info:after {
+        left: 25%;
+        height: 95%;
+        top: 4px;
+    }
+    #container #contact_article #contact .right .tab {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    #container #contact_article #contact .right .input-line .label{
+        font-size: 15px;
+    }
+    #container #contact_article #contact .right .input-line:nth-child(3), #container #contact_article #contact .right .input-line:nth-child(4) .con-input:nth-child(1) {
+        margin-bottom: 30px;
+    }
+    #container #contact_article #contact .right .input-line{
+        margin-top: 30px;
+    }
+    #container #contact_article #contact .right .agreement-wrap label input[type=checkbox] {
+        width: 18px;
+        height: 18px;
+    }
+    #container #contact_article #contact .right .agreement-wrap label{
+        font-size: 14px;
+    }
+    #container #contact_article #contact .right .agreement-wrap .more-open{
+        top: 0;
+    }
+    #container #contact_article #contact .right .submit{
+        font-size: 18px;
+    }
+    #container #contact_article #contact .right .agreement-wrap .box {
+        font-size: 15px;
+        padding: 20px;
+    }
+}

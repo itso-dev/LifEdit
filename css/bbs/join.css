@@ -1,0 +1,778 @@
+
+/* **************************************** *
+ * jon01 시작
+ * **************************************** */
+#container #join01_article01{
+    max-width:1420px;
+    width: 90%;
+    margin: 100px auto 0;
+}
+
+#container #join01_article01 p{
+    color: #3EB86F;
+    font-size: 18px;
+    font-weight: 350;
+    letter-spacing: -0.36px;
+    font-family: 'Noto Sans KR';
+}
+
+#container #join01_article01 h3{
+    color: #333;
+    font-family: 'Noto Sans KR';
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    margin-top: 10px;
+}
+
+#container #join01_article01 .agree{
+    margin: 70px 0 15px 0;
+}
+
+#container #join01_article01 .agree span{
+    color: #333;
+    font-family: 'Noto Sans KR';
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: -0.75px;
+}
+
+#container #join01_article01 .agree ul{
+    float: right;
+    display: flex;
+    margin-top: 5px;
+}
+
+#container #join01_article01 .agree ul > li{
+    color: #999;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-right: 30px;
+    position: relative;
+    top: 3px;
+}
+
+#container #join01_article01 .agree ul > li:last-child{
+    margin-right: 0px;
+}
+
+#container #join01_article01 .agree ul > li.click{
+    color: #3EB86F;
+    font-weight: 500;
+}
+
+#container #check_article{
+    border-top: 1px solid #E6E6EA;
+    margin-bottom: 100px;
+}
+#container #check_article .check-wrap{
+    cursor: pointer;
+}
+#container #check_article .check_inner{
+    max-width:1420px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+#container #check_article .check_inner img{
+    width: 15px;
+    height: 8px;
+    position: relative;
+    top: 10px;
+}
+#container #check_article .check_inner.open img{
+    transform: rotate(180deg);
+}
+#container #check_article .check01_inner{
+    cursor: unset;
+}
+#container #check_article .check01_inner .check{
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+}
+
+#container #check_article .check01_inner label{
+    font-family: 'Noto Sans KR';
+    color: #555;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+#container #check_article .check02_inner{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#container #check_article .check02_inner .check{
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+}
+
+#container #check_article .check02_inner label{
+    font-family: 'Noto Sans KR';
+    color: #555;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+#container #check_article .check02_inner label strong{
+    color: #FF4337;
+    font-weight: 400;
+}
+
+#container #check_article .box{
+    width: 100%;
+    height: 108px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: #F8F8FA;
+    display: none;
+}
+
+#container #check_article .box p{
+    color: #5D5E67;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.48px;
+    padding: 30px;
+    height: 110px;
+    overflow-y: scroll;
+}
+#container #check_article .check03_inner{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#container #check_article .check03_inner .check{
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+}
+
+#container #check_article .check03_inner label{
+    font-family: 'Noto Sans KR';
+    color: #555;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+#container #check_article .check03_inner label strong{
+    color: #FF4337;
+    font-weight: 400;
+}
+#container #check_article .check04_inner{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#container #check_article .check04_inner .check{
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+}
+
+#container #check_article .check04_inner label{
+    font-family: 'Noto Sans KR';
+    color: #555;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+#container #check_article .check04_inner label strong{
+    color: #999;
+    font-weight: 400;
+}
+
+#container #loginbtn_div {
+    max-width:1420px;
+    width: 90%;
+    margin: 0 auto;
+}
+#container #loginbtn_div button{
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    font-family: 'Noto Sans KR';
+    font-size: 24px;
+}
+
+/* **************************************** *
+ * jon01 끝
+ * **************************************** */
+
+
+
+
+ /* **************************************** *
+ * jon02 시작
+ * **************************************** */
+
+#container #join02_article{
+    border-top: 1px solid #E6E6EA;
+    margin-bottom: 100px;
+}
+
+#container #join02_article .input_inner{
+    max-width:1420px;
+    width: 90%;
+    margin: 0 auto
+}
+#container #join02_article .input-wrap{
+    margin-bottom: 75px;
+}
+#container #join02_article .input-wrap:nth-last-child(1){
+    margin-bottom: 0;
+}
+#container #join02_article .input-wrap.certification-wrap{
+    display: none;
+}
+#container #join02_article .input01{
+}
+
+#container #join02_article .input01 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input01 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input01 input{
+    width: 70%;
+    margin-top: 10px;
+}
+
+#container #join02_article .input02{
+
+}
+
+#container #join02_article .input02 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input02 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input02 .input02_02{
+    display: flex;
+    margin-top: 10px;
+}
+
+#container #join02_article .input02 .input02_02 span{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+    margin: 10px 10px 0 0;
+}
+
+#container #join02_article .input02 .input02_02 input{
+    width: 18%;
+    margin-right: 50px;
+}
+
+#container #join02_article .input02 .input02_02 input:last-child{
+    margin-right: 0px;
+}
+
+#container #join02_article .input03{
+
+}
+
+#container #join02_article .input03 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input03 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input03 .input02_03{
+    margin-top: 10px;
+}
+
+#container #join02_article .input03 .input02_03 input{
+    margin-right: 12px;
+    width: 70%;
+}
+
+#container #join02_article .input03 .input02_03 button{
+    padding: 10px 37px;
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+}
+
+#container #join02_article .input03 .add02{
+    margin-top: 5px;
+    width: 70%;
+}
+
+#container #join02_article .input04{
+
+}
+
+#container #join02_article .input04 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input04 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input04 input{
+    margin-top: 10px;
+    width: 70%;
+}
+
+#container #join02_article .input05{
+
+}
+
+#container #join02_article .input05 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input05 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input05 input{
+    margin: 10px 12px 0 0;
+    width: 70%;
+}
+
+#container #join02_article .input05 button{
+    padding: 10px 37px;
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    margin-top: 8px;
+}
+
+#container #join02_article .input06{
+    margin-top: 100px;
+}
+
+#container #join02_article .input06 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input06 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input06 input{
+    margin: 10px 12px 0 0;
+    width: 70%;
+}
+#container #join02_article .input06 .btn-wrap{
+    display: inline-block;
+}
+#container #join02_article .input06 button{
+    padding: 10px 24px;
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    margin-top: 8px;
+}
+
+#container #join02_article .input06 .error{
+    color: #FF4337;
+    font-family: 'Noto Sans KR';
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.36px;
+    padding: 7px 0 0 22px;
+}
+
+#container #join02_article .input07{
+
+}
+
+#container #join02_article .input07 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input07 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input07 input{
+    margin: 10px 12px 0 0;
+    width: 70%;
+}
+
+#container #join02_article .input07 button{
+    padding: 10px 24px;
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    margin-top: 8px;
+}
+
+#container #join02_article .poss{
+    color: #3EB86F !important;
+    font-family: 'Noto Sans KR';
+    font-size: 12px !important;
+    font-weight: 400;
+    letter-spacing: -0.36px;
+    padding: 7px 0 0 22px;
+}
+
+#container #join02_article .input08{
+
+}
+
+#container #join02_article .input08 p{
+    color: #555;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+
+#container #join02_article .input08 p strong{
+    color: #3EB86F;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.54px;
+    margin-left: 5px;
+}
+
+#container #join02_article .input08 input{
+    margin: 10px 12px 0 0;
+    width: 70%;
+}
+
+#container #join02_article .input08 button{
+    padding: 10px 24px;
+    color: #FFF;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    margin-top: 8px;
+}
+
+#container #join02_article .error{
+    color: #FF4337 !important;
+    font-family: 'Noto Sans KR';
+    font-size: 12px !important;
+    font-weight: 400;
+    letter-spacing: -0.36px;
+    padding: 7px 0 0 22px;
+}
+
+#container #loginbtn_div {
+    max-width:1420px;
+    width: 90%;
+    margin: 0 auto;
+}
+#container #loginbtn_div button{
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    font-family: 'Noto Sans KR';
+    font-size: 24px;
+}
+
+
+
+ /* **************************************** *
+ * jon02 끝
+ * **************************************** */
+
+
+
+
+ /* **************************************** *
+ * jon03 시작
+ * **************************************** */
+
+#container #join03_article01{
+    max-width:1420px;
+    width: 90%;
+    margin: 100px auto 0px;
+}
+
+#container #join03_article01 .join03_inner{
+    text-align: center;
+}
+
+#container #join03_article01 .join03_inner img{
+    width: 200px;
+}
+
+#container #join03_article01 .join03_inner p{
+    margin-top: 35px;
+    color: #333;
+    text-align: center;
+    font-family: 'SCoreDream';
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: -0.44px;
+}
+
+#container #loginbtn03_div{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#container #loginbtn03_div button{
+    margin-top: 100px;
+    display: inline-block;
+    height: 70px;
+    width: 100%;
+    font-family: 'Noto Sans KR';
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.72px;
+}
+
+ /* **************************************** *
+ * jon03 끝
+ * **************************************** */
+
+@media (max-width: 1024px) {
+    #container #join02_article .input01 input,
+    #container #join02_article .input02 input,
+    #container #join02_article .input03 input,
+    #container #join02_article .input04 input,
+    #container #join02_article .input05 input,
+    #container #join02_article .input06 input,
+    #container #join02_article .input07 input,
+    #container #join02_article .input08 input{
+        width: 65%;
+    }
+}
+
+@media (max-width: 768px) {
+    #container #join01_article01{
+        margin-top: 0;
+    }
+    #container #check_article .check_inner{
+        padding-top: 20px;
+    }
+    #container #join01_article01 .agree span{
+        font-size: 20px;
+    }
+    #container #join01_article01 .agree ul > li{
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    #container #check_article .check01_inner label,
+    #container #check_article .check02_inner label,
+    #container #check_article .check03_inner label,
+    #container #check_article .check04_inner label{
+        font-size: 18px;
+    }
+    #container #check_article .check01_inner,
+    #container #check_article .check02_inner,
+    #container #check_article .check03_inner,
+    #container #check_article .check04_inner{
+        margin-top: 40px;
+    }
+    #container #check_article .box p {
+        font-size: 15px;
+        padding: 25px;
+    }
+    #container #loginbtn_div button {
+        height: 60px;
+        font-size: 20px;
+    }
+    #container #check_article{
+        margin-bottom: 80px;
+    }
+    #container #join02_article .input-wrap {
+        margin-bottom: 45px;
+    }
+    #container #join02_article .input06{
+        margin-top: 30px;
+        position: relative;
+    }
+    #container #join02_article .input06 .btn-wrap {
+        display: inline-block;
+        position: absolute;
+        top: -13px;
+        right: 0;
+    }
+    #container #join02_article .input06 button {
+        padding: 8px 19px;
+        font-size: 12px;
+    }
+    #container #join02_article .input05 input{
+        width: 73%;
+    }
+    #container #join02_article .input01 input,
+    #container #join02_article .input02 input,
+    #container #join02_article .input03 input,
+    #container #join02_article .input04 input,
+    #container #join02_article .input06 input,
+    #container #join02_article .input07 input,
+    #container #join02_article .input08 input,
+    #container #join02_article .input03 .add02{
+        width: 100%;
+    }
+    #container #join02_article .input01 p,
+    #container #join02_article .input02 p,
+    #container #join02_article .input03 p,
+    #container #join02_article .input04 p,
+    #container #join02_article .input05 p,
+    #container #join02_article .input06 p,
+    #container #join02_article .input07 p,
+    #container #join02_article .input08 p,
+    #container #join02_article .input02 .input02_02 span{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #container #check_article .check_inner{
+        padding-top: 0;
+    }
+    #container #check_article .check_inner img {
+        width: 12px;
+        height: 6px;
+    }
+    #container #join01_article01 .agree ul > li {
+        font-size: 13px;
+        margin-right: 15px;
+    }
+    #container #check_article .check01_inner label,
+    #container #check_article .check02_inner label,
+    #container #check_article .check03_inner label,
+    #container #check_article .check04_inner label{
+        font-size: 16px;
+    }
+    #container #check_article .check01_inner,
+    #container #check_article .check02_inner,
+    #container #check_article .check03_inner,
+    #container #check_article .check04_inner{
+        margin-top: 35px;
+    }
+    #container #check_article .box p {
+        font-size: 13px;
+    }
+    #container #check_article{
+        margin-bottom: 50px;
+    }
+    #container #loginbtn_div button {
+        height: 55px;
+        font-size: 18px;
+    }
+    #container #join02_article .input05 input {
+        width: 65%;
+    }
+    #container #join02_article .input02 .input02_02 input {
+        width: 18%;
+        margin-right: 10%;
+        padding: 10px 8px;
+    }
+    #container #join02_article .input03 .input02_03 input {
+        margin-right: 12px;
+        width: 66%;
+    }
+    #container #join03_article01 {
+        margin: 60px auto 0px;
+    }
+    #container #join03_article01 .join03_inner img {
+        width: 170px;
+    }
+    #container #join03_article01 .join03_inner p{
+        font-size: 17px;
+    }
+    #container #loginbtn03_div button {
+        margin-top: 70px;
+        height: 60px;
+        font-size: 19px;
+    }
+}

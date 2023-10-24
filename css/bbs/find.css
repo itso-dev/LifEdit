@@ -1,0 +1,13 @@
+.find-container{
+    max-width: 500px;
+    margin: 100px auto 0;
+}
+.find-container input{
+    width: 100% !important;
+}
+#container #join02_article .input-wrap{
+    margin-bottom: 30px;
+}
+#loginbtn_div{
+    margin: 50px auto 0 !important;
+}

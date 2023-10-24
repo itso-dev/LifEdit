@@ -1,0 +1,129 @@
+
+/* **************************************** *
+ * 시작
+ * **************************************** */
+#container{
+    margin-top: 150px;
+}
+#container h3{
+    text-align:center;
+    color: #333;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    line-height: 56px;
+}
+
+#container .input_article{
+    margin: 100px auto 0;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+#container .input_article .input-wrap{
+    width: 100%;
+}
+#container .input_article .input-wrap input{
+    width: 100%;
+}
+#container .input_article p{
+    float: left;
+    margin-bottom: 7px;
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.6px;
+    font-family: 'Noto Sans KR';
+}
+#container .input_article .email{
+    margin-bottom: 5px;
+}
+#container .input_article .login_option{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+#container .input_article .login_option .check{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    position: relative;
+    bottom: 2px;
+}
+#container .input_article .login_option label{
+    font-family: 'Noto Sans KR';
+    color: #777;
+    letter-spacing: -0.12px;
+    display: inline-block;
+}
+#container .input_article .login_option .find_div{
+    float: right;
+    display: flex;
+    gap: 30px;
+    text-align: right;
+}
+#container .input_article .login_option .find_div a{
+    position: relative;
+    color: #777;
+    font-family: 'Noto Sans KR';
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.12px;
+}
+#container .input_article .login_option .find_div a:nth-child(1):after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: -15px;
+    width: 1px;
+    height: 10px;
+    background: #999;
+}
+#container .input_article .loginbtn_div{
+    margin-top: 70px;
+}
+#container .input_article .loginbtn_div input{
+    display: inline-block;
+    max-width: 350px;
+    height: 44px;
+    font-family: 'Noto Sans KR';
+    margin-bottom: 5px;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 100%;
+}
+#container .input_article .loginbtn_div .green_join{
+    display: inline-block;
+    max-width: 350px;
+    height: 44px;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    line-height: 44px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    #container h3{
+        font-size: 35px;
+    }
+    #container .input_article{
+        margin: 80px auto 0;
+    }
+}
+@media (max-width: 768px) {
+    #container h3{
+        font-size: 30px;
+        line-height: 50px;
+    }
+    #container .input_article{
+        margin: 50px auto 0;
+    }
+}
+@media (max-width: 480px) {
+    #container h3{
+        font-size: 26px;
+        line-height: 45px;
+    }
+}
