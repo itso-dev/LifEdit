@@ -13,10 +13,9 @@
 .gnb-container .sidebar .sidebar-wrapper{
     position: relative;
     background-color: #0eb1c9; /*#FFB236*/
-    height: 100%;
+    height: calc(100% - 100px);
     overflow: auto;
     width: 300px;
-    border-radius: 0 80px 0 0;
     z-index: 4;
     padding-bottom: 0px;
     box-shadow: 10px 20px 10px 0 rgb(0 0 0 / 10%), 0px 2px 30px 0 rgb(0 0 0 / 15%);
@@ -30,6 +29,8 @@
     font-weight: bold;
     font-size: 26px;
     letter-spacing: -1px;
+    color: #000;
+    text-decoration: none;
 }
 .gnb-container .sidebar .brand:hover{
     color: #0eb1c9;
@@ -47,9 +48,9 @@
 .gnb-container .sidebar .nav li{
     width: 100%;
 }
-.gnb-container .sidebar .nav li a{
-    margin: 10px 50px 0 15px;
-    border-radius: 30px;
+.gnb-container .sidebar .nav li a,
+.gnb-container .sidebar .nav li span {
+    margin: 10px 0 0 0;
     color: #fff;
     display: block;
     text-decoration: none;
@@ -61,17 +62,28 @@
     box-sizing: border-box;
     line-height: 1.625rem;
 }
-.gnb-container .sidebar .nav li.active a{
+.gnb-container .sidebar .nav li.active .menu{
     background-color: #fff;
     box-shadow: 10px 10px 10px 1px rgb(39 39 39 / 10%);
     color: #0eb1c9;
 }
 
-.gnb-container .sidebar .nav li:hover a{
+.gnb-container .sidebar .nav li a:hover,
+.gnb-container .sidebar .nav li span:hover{
     color: #0eb1c9;
     background-color: #fff;
 }
+.gnb-container .sidebar .nav li .toggle{
+    position: absolute;
+    top: 13px;
+    right: 10px;
+}
+.gnb-container .sidebar .nav li.toggle-open .toggle{
+    transform: rotate(180deg);
+    top: 11px;
+}
 
+.gnb-container .sidebar .nav li span p,
 .gnb-container .sidebar .nav li a p{
     font-size: 16px;
 }
@@ -91,6 +103,13 @@
     font-size: 14px;
     font-weight: 600;
 }
+.gnb-container .sidebar .nav li .submenu{
+    display: none;
+}
+.gnb-container .sidebar .nav li .submenu a{
+    font-size: 16px;
+    padding-left: 20%;
+}
 .gnb-container .sidebar .line{
     display: block;
     width: 100%;
@@ -107,11 +126,11 @@
     background: #009cb3;
     width: 100%;
     padding: 10% 5%;
-    position: absolute;
     bottom: 0;
     text-align: center;
     color: #fff;
     z-index: 5;
+    margin-top: 50px;
 }
 .gnb-container .service-center-wrap .tit{
     font-size: 18px;

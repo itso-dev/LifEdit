@@ -120,7 +120,12 @@ table{
     border-radius: 0.1875rem;
     padding: 7.5px 15px;
 }
-
+.modal-dialog .table th{
+    font-size: 17px !important;
+}
+.modal-dialog .table td{
+    font-size: 15px;
+}
 
 @media (min-width: 992px){
     .modal-lg, .modal-xl {

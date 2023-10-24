@@ -29,7 +29,7 @@ $phpExcel = new PHPExcel();
 
 $phpExcel->setActiveSheetIndex(0);
 $phpExcel->getActiveSheet()
-    ->setCellValue("A1", "생성일")
+    ->setCellValue("A1", "등록일")
     ->setCellValue("B1", "이름")
     ->setCellValue("C1", "연락처")
     ->setCellValue("D1", "창업희망지역")

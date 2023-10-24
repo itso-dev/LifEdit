@@ -11,7 +11,6 @@ $login_stt=$db_conn->prepare($login_sql);
 $login_stt->execute();
 
 
-
 echo $login_id;
 
 $is_admin = 1;

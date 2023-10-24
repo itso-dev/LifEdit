@@ -3,16 +3,15 @@
 
     $posted = date("Y-m-d H:i:s");
 
-    $phone = $_POST['phone'];
-    $desc = $_POST['desc'];
+    $email = $_POST['email'];
 
 
 
     //수정
-      $modify_sql = "update pay_service_tbl
+      $modify_sql = "update email_tbl
            set 
-      phone = '$phone',
-      message = '$desc'
+      email = '$email',
+      regdate = '$posted'
            where
       id = 1";
 
@@ -20,7 +19,7 @@
       $updateStmt->execute();
 
       echo "<script type='text/javascript'>";
-      echo "alert('저장되었습니다.'); location.href='../sms_service.php'";
+      echo "alert('저장되었습니다.'); location.href='../email_form.php?menu=1'";
       echo "</script>";
 
 

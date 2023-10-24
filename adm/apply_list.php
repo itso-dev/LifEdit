@@ -85,7 +85,7 @@
     if($sch_manager == ""){
         $sch_manager_key = " where manager_fk is not NULL";
     }else{
-        $sch_manager_key = " manager_fk = $sch_manager";
+        $sch_manager_key = "where manager_fk = $sch_manager";
     }
     //상담 결과 검색
     if($sch_c_result == ""){
@@ -103,7 +103,7 @@
     if($stx == ""){
         $stx_key = "";
     }else{
-        $stx_key = " AND ( name like '%$stx%' OR `desc` like '%$stx%' OR contact_desc like '%$stx%' OR  writer_ip like '%$stx%' )";
+        $stx_key = " AND ( name like '%$stx%' OR email like '%$stx%' OR phone like '%$stx%' OR contact_desc like '%$stx%' OR  writer_ip like '%$stx%' )";
     }
 
 
@@ -119,7 +119,8 @@
                 .$sch_date_key
                 .$stx_key
                 ." order by id desc limit $first, $list_size";
-    $list_stt=$db_conn->prepare($list_sql);
+
+$list_stt=$db_conn->prepare($list_sql);
     $list_stt->execute();
 
     //총 페이지를 구하기 위한 sql문
@@ -133,6 +134,12 @@
     $row = ceil($_GET['page']/$page_size);
 
     $start_page=(($row-1)*$page_size)+1;
+
+    //담당자 리스트
+    $admin_sql = "select * from admin_tbl order by id";
+    $admin_stt=$db_conn->prepare($admin_sql);
+    $admin_stt->execute();
+
 ?>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="./css/apply_list.css" rel="stylesheet" />
@@ -155,8 +162,10 @@
                             <button type="submit" value="검색" onclick="document.pressed = this.value">삭제방지</button>
                         </div>
                         <button type="submit" name="act_button" id="delete_btn" value="선택삭제" onclick="document.pressed=this.value" class="btn btn-danger btn-sm shadow">선택삭제</button>
-                        <button type="submit" id="export_chks" class="btn btn-primary btn-sm float-right shadow" onclick="document.pressed = '다운로드'" data-href="./ajax/apply_list_export.php">선택 엑셀 다운로드</button>
-                        <a id="export_all" href="./ajax/apply_list_export.php?type=all" target="_self" class="btn btn-sm float-right shadow">액셀 다운로드</a>
+<!--                        <button type="submit" id="export_chks" class="btn btn-primary btn-sm float-right shadow" onclick="document.pressed = '다운로드'" data-href="./ajax/apply_list_export.php">선택 엑셀 다운로드</button>-->
+<!--                        <a id="export_all" href="./ajax/apply_list_export.php?type=all" target="_self" class="btn btn-sm float-right shadow">액셀 다운로드</a>-->
+                        <a id="export_chks" class="btn btn-primary btn-sm float-right shadow" href="email_form.php?menu=1">발송 이메일 설정</a>
+
                     </div>
                 </div>
                 <div class="mx-3 my-2 p-3 page-header border">
@@ -180,7 +189,7 @@
                     <div class="row mx-0 mb-2">
                         <div class="col-6 col-md-2 my-1 my-md-0 px-1">
                             <select class="custom-select custom-select-sm rounded-0" name="sch_manager">
-                                <option value="0">없음</option>
+                                <option value="">없음</option>
                                 <?php
                                 while($admin_row1=$admin_stt->fetch()){
                                     ?>
@@ -192,7 +201,7 @@
                             <select class="custom-select custom-select-sm rounded-0" name="sch_c_result">
                                 <option value="" <? if($sch_c_result == "" || $sch_c_result == "전체") echo "selected" ?> >전체</option>
                                 <option value="대기" <? if($sch_c_result == "대기") echo "selected" ?> >대기</option>
-                                <option value="잔행" <? if($sch_c_result == "잔행") echo "selected" ?> >잔행</option>
+                                <option value="진행" <? if($sch_c_result == "진행") echo "selected" ?> >진행</option>
                                 <option value="부재" <? if($sch_c_result == "부재") echo "selected" ?> >부재</option>
                                 <option value="재통화" <? if($sch_c_result == "재통화") echo "selected" ?> >재통화</option>
                                 <option value="거절" <? if($sch_c_result == "거절") echo "selected" ?> >거절</option>
@@ -220,10 +229,12 @@
                             <thead>
                                 <tr>
                                     <th scope="col" class="text-center" style="width: 70px;"><input type="checkbox" class="checkbox-controller" onclick="check_all(this)"></th>
-                                    <th scope="col" style="cursor: pointer; width: 182px;" class="text-left" onclick="sortColumn('sort_date');">생성일</th>
-                                    <th scope="col" style="width:102px;cursor: pointer;" onclick="sortColumn('sort_name');">이름</th>
+                                    <th scope="col" style="cursor: pointer; width: 182px;" class="text-left" onclick="sortColumn('sort_date');">등록일</th>
+                                    <th scope="col" style="width:102px;cursor: pointer;" onclick="sortColumn('sort_name');">구분</th>
+                                    <th scope="col" style="width: 192px;">이름</th>
                                     <th scope="col" style="width: 192px;">연락처</th>
-                                    <th scope="col" style="width: 192px;">창업희망지역</th>
+                                    <th scope="col" style="width: 192px;">이메일</th>
+                                    <th scope="col" style="width: 192px;">문의 제목</th>
                                     <th scope="col" style="width: 192px;">문의 내용</th>
                                     <th scope="col" style="width: 110px;">상담내역</th>
                                     <!-- <th scope="col" style="width: 110px;">상담로그</th> -->
@@ -245,9 +256,11 @@
                                         <input type="checkbox" name="chk[]" class="checkbox-list" value="<?= $list_row['id'] ?>" id="chk_">
                                     </td>
                                     <td><?=$list_row['write_date']?></td>
+                                    <td><?=$list_row['type']?></td>
                                     <td><?=$list_row['name']?></td>
                                     <td><?=$list_row['phone']?></td>
-                                    <td><?=$list_row['location']?></td>
+                                    <td><?=$list_row['email']?></td>
+                                    <td><?=$list_row['title']?></td>
                                     <td>
                                         <button type="button" class="button button4" style="width: 100px;" onclick="openContactDescModal(<?= $list_row['id'] ?>);">문의 내용</button>
                                     </td>
@@ -262,7 +275,6 @@
                                             <option value="대기" <? if($list_row['result_status'] == "대기") echo "selected"?>>대기</option>
                                             <option value="진행" <? if($list_row['result_status'] == "진행") echo "selected"?>>진행</option>
                                             <option value="부재" <? if($list_row['result_status'] == "부재") echo "selected"?>>부재</option>
-                                            <option value="재통화" <? if($list_row['result_status'] == "재통화") echo "selected"?>>재통화</option>
                                             <option value="거절" <? if($list_row['result_status'] == "거절") echo "selected"?>>거절</option>
                                             <option value="완료" <? if($list_row['result_status'] == "완료") echo "selected"?>>완료</option>
                                         </select>
@@ -272,12 +284,11 @@
                                             <option value="0" <? if($list_row['manager_fk'] == 0) echo "selected"?>>없음</option>
                                             <?php
                                             //담당자 리스트
-                                            $admin_sql = "select * from admin_tbl order by id";
-                                            $admin_stt=$db_conn->prepare($admin_sql);
-                                            $admin_stt->execute();
-                                            while($admin_row=$admin_stt->fetch()){
+                                            $admin_stt2=$db_conn->prepare($admin_sql);
+                                            $admin_stt2->execute();
+                                            while($manager_row=$admin_stt2->fetch()){
                                             ?>
-                                            <option value="<?= $admin_row['id'] ?>" <? if($list_row['manager_fk'] == $admin_row['id']) echo "selected"?>><?= $admin_row['login_name'] ?></option>
+                                            <option value="<?= $manager_row['id'] ?>" <? if($list_row['manager_fk'] == $manager_row['id']) echo "selected"?>><?= $manager_row['login_name'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </td>

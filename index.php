@@ -37,17 +37,41 @@ $view_sql = "insert into view_log_tbl
 $db_conn->prepare($view_sql)->execute(
     [1, $today]
 );
+
+// 배너 Total
+$banner_cnt_sql = "select count(*) as cnt from banner_tbl";
+$banner_cnt_stt=$db_conn->prepare($banner_cnt_sql);
+$banner_cnt_stt->execute();
+$banner_cnt = $banner_cnt_stt->fetch();
+// 배너
+$banner_sql = "select * from banner_tbl order by b_order";
+$banner_stt=$db_conn->prepare($banner_sql);
+$banner_stt->execute();
+$banner_dir = $site_url ."/data/banner/";
+
+//포트폴리오
+$portfolio_sql = "select * from portfolio_tbl where is_main = 'Y'";
+$portfolio_stt=$db_conn->prepare($portfolio_sql);
+$portfolio_stt->execute();
+
+$portfolio_thumb_dir = $site_url .'/data/portfolio/';
+
+
+// 파트너 첫째줄
+$first_partner_sql = "select * from partner_tbl where row = '1' order by id";
+$first_partner_stt=$db_conn->prepare($first_partner_sql);
+$first_partner_stt->execute();
+// 파트너 둘째줄
+$second_partner_sql = "select * from partner_tbl where row = '2' order by id";
+$second_partner_stt=$db_conn->prepare($second_partner_sql);
+$second_partner_stt->execute();
+$partner_dir = $site_url ."/data/partner/";
 ?>
 
 <link rel="stylesheet" type="text/css" href="css/index.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- recapture -->
-<script src='https://www.google.com/recaptcha/api.js?render=6LcLwBwnAAAAANtwRmDwYZOnnULJtKw5VvmjMC85'></script>
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css" rel="stylesheet" />
+<script type="text/javascript" src="js/swiper.min.js"></script>
 
 
 
@@ -150,287 +174,252 @@ while ($popup = $popup_stt->fetch()) {
     }
 </script>
 
-<audio id="audio" autoplay type="audio/mp3">
-    <source src="bgm.mp3">
-</audio>
-<!-- Menu Navi    -->
-<div class="nav-wrap">
-    <img class="logo" src="img/logo-top.png">
-    <div class="pc-menu-wrap">
-        <ul>
-            <li><a href="#menu1">브랜드</a></li>
-            <li><a href="#menu2">경쟁력</a></li>
-            <li><a href="#menu3">상권안내</a></li>
-            <li><a href="#menu4">성공전략</a></li>
-            <li><a href="#menu5">문의하기</a></li>
-        </ul>
+<!-- Contents -->
+<?php if($banner_cnt['cnt'] != 1){ ?>
+<div class="main-banner-container">
+    <div class="swiper-wrapper">
+        <?php
+        while($banner=$banner_stt->fetch()){
+        ?>
+        <div class="swiper-slide">
+            <img onclick="window.open('<?= $banner['url'] ?>')" class="pc" src="<?= $banner_dir .$banner['pc_chg_name'] ?>">
+            <img onclick="window.open('<?= $banner['url'] ?>')" class="mobile" src="<?= $banner_dir .$banner['mobile_chg_name'] ?>">
+        </div>
+        <? } ?>
     </div>
-    <i class="fas fa-bars menu-open"></i>
+    <div class="swiper-pagination"></div>
 </div>
-<div class="sidebar-wrap">
-    <div class="menu-container">
-        <div class="close-wrap">
-            <i class="far fa-times-circle menu-close"></i>
-        </div>
-        <div class="menu-wrap">
-            <a href="#menu1">브랜드</a>
-        </div>
-        <div class="menu-wrap">
-            <a href="#menu2">경쟁력</a>
-        </div>
-        <div class="menu-wrap">
-            <a href="#menu3">상권안내</a>
-        </div>
-        <div class="menu-wrap">
-            <a href="#menu4">성공전략</a>
-        </div>
-        <div class="menu-wrap">
-            <a href="#menu5">문의하기</a>
-        </div>
+<?php } else {
+    $banner=$banner_stt->fetch()
+?>
+<div class="main-banner-container">
+    <img onclick="window.open('<?= $banner['url'] ?>')" class="pc" src="<?= $banner_dir .$banner['pc_chg_name'] ?>">
+    <img onclick="window.open('<?= $banner['url'] ?>')" class="mobile" src="<?= $banner_dir .$banner['mobile_chg_name'] ?>">
+</div>
+<? } ?>
+<div class="section01">
+    <p class="sc-title">사업소개</p>
+    <p class="sc-title-sub">Business introduction</p>
+    <div class="flex-wrap pc">
+        <img data-aos="fade-right" data-aos-duration="500" src="<?= $site_url ?>/img/main/s01-img1.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="150" src="<?= $site_url ?>/img/main/s01-img2.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="300" src="<?= $site_url ?>/img/main/s01-img3.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="450" src="<?= $site_url ?>/img/main/s01-img4.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="600" src="<?= $site_url ?>/img/main/s01-img5.png">
+    </div>
+    <div class="flex-wrap mobile">
+        <img data-aos="fade-right" data-aos-duration="500" src="<?= $site_url ?>/img/main/s01-img1.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="150" src="<?= $site_url ?>/img/main/s01-img2.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="300" src="<?= $site_url ?>/img/main/s01-img3.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="150" src="<?= $site_url ?>/img/main/s01-img4.png">
+        <img data-aos="fade-right" data-aos-duration="500" data-aos-delay="300" src="<?= $site_url ?>/img/main/s01-img5.png">
     </div>
 </div>
-
-
-<script>
-    $(document).ready(function () {
-        $('.menu-open').click(function () {
-            $(".sidebar-wrap").animate({
-                width: 500
-            });
-        });
-        $('.menu-close').click(function () {
-            $(".sidebar-wrap").animate({
-                width: 0
-            });
-        });
-
-    });
-</script>
-
-
-<form name="contact_form" id="contact_form" method="post" action="contact_write.php" onsubmit="return FormSubmit();">
-    <input type="hidden" name="writer_ip" value="<?= get_client_ip() ?>" />
-    <input type="hidden" name="action" value="go">
-    <div class="contact-container" id="menu5">
-        <div class="contact-wrap">
-            <div class="input-item">
-                <div class="label-wrap">
-                    <p>성함</p>
-                </div>
-                <div class="input-wrap">
-                    <input type="text" name="name" required>
-                </div>
-            </div>
-            <div class="input-item">
-                <div class="label-wrap">
-                    <p>연락처</p>
-                </div>
-                <div class="input-wrap">
-                    <input type="text" name="phone" required>
-                </div>
-            </div>
-            <div class="input-item">
-                <div class="label-wrap">
-                    <p>창업희망지역</p>
-                </div>
-                <div class="input-wrap">
-                    <input type="text" name="location" required>
-                </div>
-            </div>
-            <div class="input-item">
-                <div class="label-wrap">
-                    <p>희망창업비용</p>
-                </div>
-                <div class="input-wrap">
-                    <input type="text" name="price" required>
-                </div>
-                <span class="sub">만원</span>
-            </div>
-            <div class="input-item">
-                <div class="label-wrap">
-                    <p>문의사항</p>
-                </div>
-                <div class="input-wrap">
-                    <textarea name="contact_desc"></textarea>
-                </div>
-            </div>
+<div class="section02">
+    <img class="icon" src="<?= $site_url ?>/img/main/s02-icon.png">
+    <p class="sub"  data-aos="fade-down">About Lifedit</p>
+    <p class="txt"><span class="colored">스토리</span>로 당신의 사업을 더욱 빛나게</p>
+    <a href="" data-aos="flip-up" data-aos-duration="500" data-aos-delay="300">회사 소개</a>
+</div>
+<div class="section03">
+    <div class="flex-wrap first">
+        <div class="txt-wrap" >
+           <div class="inner">
+               <p class="title" data-aos="fade-right" data-aos-duration="500"><strong>공연</strong>( Performance )</p>
+               <strong class="title-mo" data-aos="fade-up" data-aos-duration="500">공연</strong>
+               <p class="sub-mo">( Performance )</p>
+               <p class="txt">
+                   스토리가 담긴 특별한 행사 공연을 기획합니다.<br> 울림이 있는 가심비 공연을 만나보세요.
+               </p>
+               <a class="more">VIEW MORE +</a>
+           </div>
         </div>
-        <div class="agreement-wrap">
-            <div class="agreement">
-                <p class="tit">&#60;개인정보 취급방침&#62;</p>
-                <p class="content">
-                    작성하신 실명과 전화번호는 개인정보 보호법 제 15조 및 22조에 의거, 상담접수 및 서비스제공 용도로만 사용되며 랜딩접수가 진행되는기간 동안만 보관하게 됩니다.<br>
-                    수집 개인정보는 이름 및 휴대전화 번호이며 랜딩접수 및 서비스제공의 목적으로만 사용됩니다.<br>
-                    <br>
-                    - 개인정보 수집, 이용 목적 : 랜딩접수 및 서비스제공<br>
-                    - 수집하려는 개인정보 항목 : 이름, 휴대폰 번호<br>
-                    - 개인정보의 보유 및 이용기간 : 랜딩페이지 사용 종료 후 , 서비스 안내 일주일 후 파기
+        <div class="img-wrap">
+            <img class="pc-img" data-aos="fade-left" data-aos-duration="500" src="<?= $site_url ?>/img/main/sc03-img1.png">
+            <img class="tablet" data-aos="fade-down" data-aos-duration="500" src="<?= $site_url ?>/img/main/s03-img1-mo.png">
+        </div>
+    </div>
+    <div class="flex-wrap second">
+        <div class="img-wrap">
+            <img class="pc-img" data-aos="fade-right" data-aos-duration="500" src="<?= $site_url ?>/img/main/sc03-img2.png">
+            <img class="tablet" data-aos="fade-down" data-aos-duration="500" src="<?= $site_url ?>/img/main/s03-img2-mo.png">
+        </div>
+        <div class="txt-wrap">
+            <div class="inner">
+                <p class="title" data-aos="fade-left" data-aos-duration="500"><strong>교육</strong>( Sharing )</p>
+                <strong class="title-mo" data-aos="fade-up" data-aos-duration="500">교육</strong>
+                <p class="sub-mo">( Sharing )</p>
+                <p class="txt">
+                    초등 교육 프로그램을 기획합니다.<br>
+                    나만의 스토리를 가진 르네상스형 인재로 자라납니다.
                 </p>
+                <a class="more">VIEW MORE +</a>
             </div>
-            <div class="agree-wrap">
-                <label>
-                    <input type="checkbox" name="agree" required>
-                    개인 정보 취급 방침에 동의
-                </label>
-            </div>
-            <input type="hidden" id="g-recaptcha" name="g-recaptcha">
-            <input class="submit-btn" type="submit" value="창업 문의하기" class="g-recaptcha" data-sitekey="6LeIUPcmAAAAAKknvdvB6rUxzAeGwrQrm3tGMnrV" data-callback='frmSubmit' data-action='submit'  />
         </div>
     </div>
-</form>
-
-<!-- floating -->
-<div class="floating-container">
-    <div class="floating-wrap">
-        <div class="right-wrap item">
-            <div class="item-wrap" id="call" onclick="location.href='tel:031-932-2030'"
-                onMouseDown="javascript:_PL('http://www.yevans.com/call.php');">
-                <div class="icon-wrap">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="text-wrap">
-                    <p>창업문의</p>
-                    <p>1668-1350</p>
-                </div>
+    <div class="flex-wrap third">
+        <div class="txt-wrap">
+            <div class="inner">
+                <p class="title" data-aos="fade-right" data-aos-duration="500"><strong>오디오 콘텐츠</strong>( Audio Contents )</p>
+                <strong class="title-mo" data-aos="fade-up" data-aos-duration="500">오디오 콘텐츠</strong>
+                <p class="sub-mo">( Audio Contents )</p>
+                <p class="txt">
+                    열린 관광을 위한 오디오 콘텐츠를 제작합니다.<br>
+                    모두가 즐길 수 있는 맞춤형 오디오 콘텐츠, 맡겨보세요.
+                </p>
+                <a class="more">VIEW MORE +</a>
             </div>
         </div>
-        <div class="left-wrap item">
-            <div class="item-wrap" onclick="location.href='#menu5   '">
-                <div class="icon-wrap">
-                    <i class="fas fa-clipboard-check"></i>
-                </div>
-                <div class="text-wrap">
-                    <p>24시간 접수</p>
-                    <p>가맹상담 신청</p>
-                </div>
+        <div class="img-wrap">
+            <img class="pc-img" data-aos="fade-left" data-aos-duration="500" src="<?= $site_url ?>/img/main/sc03-img3.png">
+            <img class="tablet" data-aos="fade-down" data-aos-duration="500" src="<?= $site_url ?>/img/main/s03-img3-mo.png">
+        </div>
+    </div>
+    <div class="flex-wrap fourth">
+        <div class="img-wrap">
+            <img class="pc-img" data-aos="fade-right" data-aos-duration="500" src="<?= $site_url ?>/img/main/sc03-img4.png">
+            <img class="tablet" data-aos="fade-down" data-aos-duration="500" src="<?= $site_url ?>/img/main/s03-img4-mo.png">
+        </div>
+        <div class="txt-wrap">
+            <div class="inner">
+                <p class="title" data-aos="fade-left" data-aos-duration="500"><strong>라이프에디트 랩</strong>( Lifedit LAB )</p>
+                <strong class="title-mo" data-aos="fade-up" data-aos-duration="500">라이프에디트 랩</strong>
+                <p class="sub-mo">( Lifedit LAB )</p>
+                <p class="txt">
+                    나를 나답게, 너를 너답게, 우리답게<br>
+                    선한 영향력을 위한 작당 모의
+                </p>
+                <a class="more">VIEW MORE +</a>
             </div>
         </div>
     </div>
 </div>
-<script src='https://www.google.com/recaptcha/api.js?render=6LeIUPcmAAAAAKknvdvB6rUxzAeGwrQrm3tGMnrV'></script>
-<script type="text/javascript">
-
+<div class="section04">
+    <p class="sc-title">포트폴리오</p>
+    <p class="sc-title-sub">Portfolio</p>
+    <div class="portfolio-slide-container">
+        <div class="swiper-wrapper">
+            <?php while($pf=$portfolio_stt->fetch()){ ?>
+            <div class="swiper-slide"  style="background: url('<?= $portfolio_thumb_dir .$pf['chg_name'] ?>')"></div>
+            <? } ?>
+        </div>
+    </div>
+    <a href="<?= $site_url ?>/page/portfolio/portfolio.php">더 알아보기</a>
+</div>
+<div class="section05">
+    <p class="sc-title">파트너</p>
+    <p class="sc-title-sub">Partner</p>
+    <div class="partner-slide-container">
+        <div class="swiper-wrapper">
+            <?php
+            while($first_partner=$first_partner_stt->fetch()){
+            ?>
+            <div class="swiper-slide"><img onclick="window.open('<?= $first_partner['url'] ?>')" src="<?= $partner_dir .$first_partner['chg_name'] ?>"></div>
+            <? } ?>
+        </div>
+    </div>
+    <div class="partner-slide-container">
+        <div class="swiper-wrapper">
+            <?php
+            while($second_partner=$second_partner_stt->fetch()){
+                ?>
+                <div class="swiper-slide"><img onclick="window.open('<?= $second_partner['url'] ?>')" src="<?= $partner_dir .$second_partner['chg_name'] ?>"></div>
+            <? } ?>
+        </div>
+    </div>
+    <a class="more" href="<?= $site_url ?>/contact.php">
+        <img src="<?= $site_url ?>/img/main/s05-icon.png"/>
+        문의하기
+    </a>
+</div>
+<script>
     AOS.init();
 
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6LcLwBwnAAAAANtwRmDwYZOnnULJtKw5VvmjMC85', {action: 'submit'}).then(function(token) {
-            document.getElementById('g-recaptcha').value = token;
-        });
-    });
-
-    window.onpageshow = function(event) {
-        if (event.persisted || (window.performance && window.performance.navigation.type == 2)) {
-            // Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
-            location.href = "/";
-        }
-    }
-
-
-    $(document).ready(function () {
-
-        var $w = $(window),
-            footerHei = $('.contact-wrap').outerHeight(),
-            $floating = $('.floating-container');
-
-        $w.on('scroll', function () {
-
-            var sT = $w.scrollTop();
-            var val = $(document).height() - $w.height() - footerHei;
-
-            if (sT >= val)
-                $floating.fadeOut('600');
-            else
-                $floating.fadeIn('600');
-
-        });
-
-
-    });
     $(function () {
 
-        var banchan = new Swiper(".banchan-container", {
-            slidesPerView: 3,
-            loop: true,
+        /* 메인 슬라이드 */
+        var mainBanner = new Swiper(".main-banner-container", {
             autoplay: {
-                delay: 2500,
+                delay: 3000, //add
                 disableOnInteraction: false,
             },
+            observer: true,
+            observeParents: true,
+            speed: 5000,
+            loop: true,
+            loopAdditionalSlides: 1,
+            slidesPerView: 1,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        /*  포트폴리오 슬라이드 */
+        var portfolioBanner = new Swiper(".portfolio-slide-container", {
+            autoplay: {
+                delay: 3000, //add
+                disableOnInteraction: false,
+            },
+            spaceBetween: 20,
+            observer: true,
+            observeParents: true,
+            speed: 5000,
+            centeredSlides: true,
+            loop: true,
+            loopAdditionalSlides: 1,
+            slidesPerView: 2.3,
             breakpoints: {
-                0: {
-                    slidesPerView: 3,
-                    spaceBetween: 10
+                480: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 10,
                 },
                 768: {
-                    slidesPerView: 5,
-                    spaceBetween: 20
+                    slidesPerView: 1.3,
+                    spaceBetween: 10,
                 },
                 1024: {
-                    slidesPerView: 6,
-                    spaceBetween: 20
+                    slidesPerView: 1.9,
+                    spaceBetween: 20,
                 },
             }
         });
-
     });
+
+    /*  파트너 슬라이드 */
+    var partnerSlide = new Swiper(".partner-slide-container", {
+        slidesPerView: 6.8,
+        autoplay: {
+            delay: 0, //add
+            disableOnInteraction: false,
+        },
+        observer: true,
+        observeParents: true,
+        speed: 3000,
+        centeredSlides: true,
+        loop: true,
+        loopAdditionalSlides: 1,
+        breakpoints: {
+            0: {
+                slidesPerView: 2.8,
+                spaceBetween: 0
+            },
+            768: {
+                slidesPerView: 2.8,
+                spaceBetween: 0
+            },
+            1024: {
+                slidesPerView: 5.8,
+                spaceBetween: 0
+            },
+        }
+    });
+
+
 </script>
 
-<!--문자 알림-->
-<script type="text/javascript">
-    function setPhoneNumber(val) {
-        var numList = val.split("-");
-        document.smsForm.sphone1.value = numList[0];
-        document.smsForm.sphone2.value = numList[1];
-        if (numList[2] != undefined) {
-            document.smsForm.sphone3.value = numList[2];
-        }
-    }
-    function loadJSON() {
-        var data_file = "message_send2.php";
-        var http_request = new XMLHttpRequest();
-        try {
-            // Opera 8.0+, Firefox, Chrome, Safari
-            http_request = new XMLHttpRequest();
-        } catch (e) {
-            // Internet Explorer Browsers
-            try {
-                http_request = new ActiveXObject("Msxml2.XMLHTTP");
 
-            } catch (e) {
 
-                try {
-                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (e) {
-                    // Eror
-                    alert("지원하지 않는브라우저!");
-                    return false;
-                }
-
-            }
-        }
-        http_request.onreadystatechange = function () {
-            if (http_request.readyState == 4) {
-                // Javascript function JSON.parse to parse JSON data
-                var jsonObj = JSON.parse(http_request.responseText);
-                if (jsonObj['result'] == "Success") {
-                    var aList = jsonObj['list'];
-                    var selectHtml = "<select name=\"sendPhone\" onchange=\"setPhoneNumber(this.value)\">";
-                    selectHtml += "<option value='' selected>발신번호를 선택해주세요</option>";
-                    for (var i = 0; i < aList.length; i++) {
-                        selectHtml += "<option value=\"" + aList[i] + "\">";
-                        selectHtml += aList[i];
-                        selectHtml += "</option>";
-                    }
-                    selectHtml += "</select>";
-                    document.getElementById("sendPhoneList").innerHTML = selectHtml;
-                }
-            }
-        }
-
-        http_request.open("GET", data_file, true);
-        http_request.send();
-    }
-
-</script>
 <?php
 include_once('tale.php');
 ?>

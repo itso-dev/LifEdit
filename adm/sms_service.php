@@ -15,7 +15,7 @@ include_once('./default.php');
 
 <div class="page-header">
     <h4>알림 문자 설정</h4>
-    <form name="sms_form" id="sms_form" method="post" action="./ajax/sms_setting.php">
+    <form name="sms_form" id="sms_form" method="post" action="ajax/email_setting.php">
         <div class="form-container">
             <div class="input-container">
                 <p class="label">알림 문자를 받을 전화번호를 입력하세요.</p>

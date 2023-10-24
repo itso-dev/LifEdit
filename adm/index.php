@@ -122,10 +122,6 @@
                        <p class="cnt"><?=number_format($total_contact[0])?></p>
                    </div>
                    <div class="item">
-                       <p class="name">상담 대기자 수</p>
-                       <p class="cnt"><?=number_format($total_waiting[0])?></p>
-                   </div>
-                   <div class="item">
                        <p class="name">상담 진행 수</p>
                        <p class="cnt"><?=number_format($total_processing[0])?></p>
                    </div>
@@ -145,10 +141,6 @@
                     <div class="item">
                         <p class="name">문의 건수</p>
                         <p class="cnt"><?=number_format($today_contact[0])?></p>
-                    </div>
-                    <div class="item">
-                        <p class="name">상담 대기자 수</p>
-                        <p class="cnt"><?=number_format($today_waiting[0])?></p>
                     </div>
                     <div class="item">
                         <p class="name">상담 진행자 수</p>
@@ -190,10 +182,6 @@
                             <p class="cnt"><?=number_format($search_contact[0])?></p>
                         </div>
                         <div class="item">
-                            <p class="name">상담 대기자 수</p>
-                            <p class="cnt"><?=number_format($search_waiting[0])?></p>
-                        </div>
-                        <div class="item">
                             <p class="name">상담 진행자 수</p>
                             <p class="cnt"><?=number_format($search_processing[0])?></p>
                         </div>
@@ -205,27 +193,27 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="content-wrap">
-                <p class="tit">이용중인 부가서비스</p>
-                <div class="form-check form-switch ">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>
-                    <label class="form-check-label" for="flexSwitchCheckDefault">챗봇 서비스</label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>
-                    <label class="form-check-label" for="flexSwitchCheckDefault">알림 문자 서비스</label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>
-                    <label class="form-check-label" for="flexSwitchCheckDefault">법정의무교육</label>
-                    <a href="service_send.php?sid=2&menu=10" class="go-link">신청하기</a>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>
-                    <label class="form-check-label" for="flexSwitchCheckDefault">임직원 역량 강화 교육 및 컨설팅</label>
-                    <a href="service_send.php?sid=2&menu=10" class="go-link">신청하기</a>
-                </div>
-            </div>
+<!--            <div class="content-wrap">-->
+<!--                <p class="tit">이용중인 부가서비스</p>-->
+<!--                <div class="form-check form-switch ">-->
+<!--                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>-->
+<!--                    <label class="form-check-label" for="flexSwitchCheckDefault">챗봇 서비스</label>-->
+<!--                </div>-->
+<!--                <div class="form-check form-switch">-->
+<!--                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>-->
+<!--                    <label class="form-check-label" for="flexSwitchCheckDefault">알림 문자 서비스</label>-->
+<!--                </div>-->
+<!--                <div class="form-check form-switch">-->
+<!--                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>-->
+<!--                    <label class="form-check-label" for="flexSwitchCheckDefault">법정의무교육</label>-->
+<!--                    <a href="service_send.php?sid=2&menu=10" class="go-link">신청하기</a>-->
+<!--                </div>-->
+<!--                <div class="form-check form-switch">-->
+<!--                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="return false;" readonly>-->
+<!--                    <label class="form-check-label" for="flexSwitchCheckDefault">임직원 역량 강화 교육 및 컨설팅</label>-->
+<!--                    <a href="service_send.php?sid=2&menu=10" class="go-link">신청하기</a>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="content-wrap">
                 <p class="tit">담당자 현황</p>
 
