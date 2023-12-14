@@ -72,7 +72,7 @@
                                     <input type="checkbox" name="chk[]" class="m_chk" value="<?=$list_row['id']?>" id="chk_<?=$list_row['id']?>">
                                 </td>
                                 <td headers="mb_list_name" class="td_mbname text-center">
-                                    <? if($list_row['is_notice'] == 'Y') echo "공지";  ?>
+                                    <? if($list_row['is_notice'] == 'Y') echo "대표";  ?>
                                     <? if($list_row['is_notice'] == 'Y' && $list_row['is_main'] == 'Y') echo " / ";  ?>
                                     <? if($list_row['is_main'] == 'Y') echo "메인 전시";  ?>
                                 </td>

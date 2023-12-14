@@ -57,7 +57,7 @@
                     else echo '메인 전시로 지정';
                     ?>
                 </span>
-                <a class="modify" href="portfolio_form.php?id=<?= $val['id'] ?>&mode=modif&menu=99">수정</a>
+                <a class="modify" href="portfolio_form.php?id=<?= $val['id'] ?>&mode=modify&menu=99">수정</a>
                 <span class="delete" onclick="delData()">삭제</span>
             </div>
 

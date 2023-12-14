@@ -69,7 +69,7 @@ if($mode=='modify'){
             </div>
             <div class="input-wrap input-file">
                 <p class="label-name">썸네일 이미지 업로드*</p>
-                <input type="file" id="thumb-img" name="thumb-img" class="form-control">
+                <input type="file" id="thumb-img" name="thumb-img" class="form-control" required>
                 <small class="red">권장 사이즈 1000 * 1000 px</small><br>
                 <small>5MB 이하의 파일만 업로드 가능합니다</small>
                 <div class="img-preview">

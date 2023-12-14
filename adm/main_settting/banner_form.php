@@ -43,7 +43,7 @@ if($type=='modify'){
         <h4 class="page-title">메인 배너 관리</h4>
         <form name="logo_form" id="logo_form" method="post" action="./setting/banner_setting.php" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $id ?>" />
-            <input type="hidden" name="type" value="<?= $type ?>" />
+            <input type="hidden" name="type" value="<?= $type; ?>" />
             <input type="hidden" name="pc_old_file" value="<?= $pc_old_file ?>" />
             <input type="hidden" name="mobile_old_file" value="<?= $mobile_old_file ?>" />
             <div class="input-wrap">
